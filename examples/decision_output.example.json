@@ -1,0 +1,41 @@
+{
+  "plan_id": "plan_demo_lab_arm_001",
+  "scene_id": "demo_lab_arm_001",
+  "goal": "place(red_block, tray)",
+  "actions": [
+    {
+      "step": 1,
+      "verb": "detect",
+      "target": "red_block",
+      "expected_state": "target_visible"
+    },
+    {
+      "step": 2,
+      "verb": "plan_grasp",
+      "target": "red_block",
+      "constraints": ["avoid_collision", "stable_grip"]
+    },
+    {
+      "step": 3,
+      "verb": "grasp",
+      "target": "red_block",
+      "timeout_ms": 5000
+    },
+    {
+      "step": 4,
+      "verb": "place",
+      "target": "tray",
+      "timeout_ms": 5000
+    },
+    {
+      "step": 5,
+      "verb": "verify",
+      "condition": "red_block in tray"
+    }
+  ],
+  "fallback": {
+    "on_failure": "retry_once_then_mark_sample",
+    "record_for_workflow_learning": true
+  },
+  "status": "preview"
+}
