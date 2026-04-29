@@ -1,0 +1,18 @@
+{
+  "scene_id": "demo_lab_arm_001",
+  "input_type": "rgbd",
+  "device": {
+    "type": "robotic_arm",
+    "id": "arm_demo_01"
+  },
+  "task": {
+    "instruction": "pick the red block and place it on the tray",
+    "language": "en",
+    "priority": "normal"
+  },
+  "context": {
+    "workspace": "lab_table",
+    "safety_mode": true,
+    "expected_objects": ["red_block", "tray"]
+  }
+}
