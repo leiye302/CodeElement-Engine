@@ -1,0 +1,47 @@
+{
+  "scene_id": "demo_lab_arm_001",
+  "scene_code": {
+    "objects": [
+      {
+        "id": "obj_001",
+        "name": "red_block",
+        "type": "cube",
+        "color": "red",
+        "pose": {
+          "frame": "table",
+          "x": 0.32,
+          "y": -0.14,
+          "z": 0.05,
+          "unit": "meter"
+        }
+      },
+      {
+        "id": "obj_002",
+        "name": "tray",
+        "type": "container",
+        "pose": {
+          "frame": "table",
+          "x": 0.58,
+          "y": 0.10,
+          "z": 0.02,
+          "unit": "meter"
+        }
+      }
+    ],
+    "relations": [
+      {
+        "subject": "red_block",
+        "relation": "on",
+        "object": "table"
+      },
+      {
+        "subject": "tray",
+        "relation": "reachable_by",
+        "object": "arm_demo_01"
+      }
+    ],
+    "goal": "place(red_block, tray)"
+  },
+  "confidence": 0.91,
+  "status": "preview"
+}
